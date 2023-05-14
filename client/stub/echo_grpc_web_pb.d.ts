@@ -11,7 +11,7 @@ export class EchoClient {
   unaryEcho(
     request: echo_pb.EchoRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.RpcError,
+    callback: (err: grpcWeb.Error,
                response: echo_pb.EchoResponse) => void
   ): grpcWeb.ClientReadableStream<echo_pb.EchoResponse>;
 
