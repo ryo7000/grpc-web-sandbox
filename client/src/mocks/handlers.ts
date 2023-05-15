@@ -29,7 +29,7 @@ function decodeReq(req: ArrayBuffer) {
 
 export const handlers = [
   rest.post(
-    "http://localhost:50051/sandbox.echo.Echo/UnaryEcho",
+    `http://${window.location.hostname}:50051/sandbox.echo.Echo/UnaryEcho`,
     async ({ request }) => {
       const req = EchoRequest.deserializeBinary(
         decodeReq(fromBase64(await request.text()))
@@ -53,7 +53,7 @@ export const handlers = [
     }
   ),
   rest.post(
-    "http://localhost:50051/sandbox.echo.Echo/ServerStreamingEcho",
+    `http://${window.location.hostname}:50051/sandbox.echo.Echo/ServerStreamingEcho`,
     async ({ request }) => {
       const req = EchoRequest.deserializeBinary(
         decodeReq(fromBase64(await request.text()))
